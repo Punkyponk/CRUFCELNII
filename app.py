@@ -32,7 +32,5 @@ def index():
     return render_template('index.html', alumnos=alumnos)
 
 if __name__ == '__main__':
+    # Este bloque no será ejecutado cuando uses Gunicorn, pero es útil para desarrollo.
     app.run(debug=True)
-# Crear las tablas si no existen
-with app.app_context():
-    db.create_all()
