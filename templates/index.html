@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alumnos</title>
+    <style>
+        /* Estilos generales para la página */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000000;
+            margin-top: 50px;
+        }
+
+        /* Estilos de la tabla */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #434644;
+            color: white;
+        }
+
+        td {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+        }
+
+        td:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Estilo para las filas impares de la tabla */
+        tr:nth-child(odd) td {
+            background-color: #f9f9f9;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #e9f7e9;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Lista de Alumnos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>No. Control</th>
+                <th>Nombre</th>
+                <th>Ap. Paterno</th>
+                <th>Ap. Materno</th>
+                <th>Semestre</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alumno in alumnos %}
+                <tr>
+                    <td>{{ alumno['no_control'] }}</td>
+                    <td>{{ alumno['nombre'] }}</td>
+                    <td>{{ alumno['ap_paterno'] }}</td>
+                    <td>{{ alumno['ap_materno'] }}</td>
+                    <td>{{ alumno['semestre'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
